@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem, removeItem, deleteItem } from '../redux/cartSlice';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,15 @@ const CartPage = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const dispatch = useDispatch();
+
+  const handleCheckoutClick = () => {
+    Swal.fire({
+      title: 'Botanical Bliss says',
+      text: 'Checkout Coming Soon...',
+      icon: 'info',
+      confirmButtonText: 'OK'
+    });
+  };
 
   return (
     <Container fluid className="cart-page" style={{ paddingTop: '70px' }}>
@@ -64,7 +74,7 @@ const CartPage = () => {
               <h5>Total Quantity: {totalQuantity}</h5>
               <h5>Total Price: &#8377; {totalPrice}</h5>
               <div className="d-flex justify-content-center mt-3">
-                <Button variant="success" className="mr-3">Checkout</Button>
+                <Button variant="success" className="mr-3" onClick={handleCheckoutClick}>Checkout</Button>
                 <Link to="/products" className="btn btn-primary ml-3">Continue Shopping</Link>
               </div>
             </Card.Body>
