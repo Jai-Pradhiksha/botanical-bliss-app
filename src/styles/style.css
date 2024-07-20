@@ -1,0 +1,39 @@
+.cart-page .btn {
+    margin-right: 10px; 
+  }
+  
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+}
+
+.landing-page-content {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-page .card-img-top {
+  height: 200px; 
+  object-fit: cover;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
